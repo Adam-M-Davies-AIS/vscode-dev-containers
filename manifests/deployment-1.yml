@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "poccluster-5790"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "poccluster-5790"
+  template:
+    metadata:
+      labels:
+        app: "poccluster-5790"
+    spec:
+      containers:
+        - name: "poccluster-5790"
+          image: "aksdevsampleregistry.azurecr.io/poccluster"
+          ports:
+          - containerPort: 80
